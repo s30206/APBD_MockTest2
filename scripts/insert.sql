@@ -3,3 +3,4 @@ insert into Car (ModelName, CarManufacturer_ID, Number) values ('HondaSuper', 1,
 -- Insert drivers with a small delay to check sorting by birthday
 insert into Driver (FirstName, LastName, Birthday, Car_ID) values ('Oleg', 'Popovich', SYSDATETIME(), 1);
 insert into Driver (FirstName, LastName, Birthday, Car_ID) values ('Aleksandr', 'Zetkovich', SYSDATETIME(), 1);
+insert into Competition (Name) values ('GigaCompetition');

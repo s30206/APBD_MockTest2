@@ -62,6 +62,10 @@ public class DriverService : IDriverService
 
     public async Task<Driver> PostDriver(InsertDriverDTO request)
     {
+        var car = await _context.Cars.FirstOrDefaultAsync(c => c.Id == request.CarId);
+        if (car is null)
+            throw new KeyNotFoundException("Car with a given id doesn't exist");
+        
         var driver = new Driver()
         {
             FirstName = request.FirstName,
@@ -73,5 +77,27 @@ public class DriverService : IDriverService
         _context.Drivers.Add(driver);
         await _context.SaveChangesAsync();
         return driver;
+    }
+
+    public async Task<DriverCompetition> AssignDriverToCompetition(InsertDriverCompetitionDTO request)
+    {
+        var driver = _context.Drivers.FirstOrDefault(d => d.Id == request.DriverId);
+        if (driver is null)
+            throw new KeyNotFoundException("Driver with a given id doesn't exist");
+        
+        var competition = _context.Competitions.FirstOrDefault(c => c.Id == request.CompetitionId);
+        if (competition is null)
+            throw new KeyNotFoundException("Competition with a given id doesn't exist");
+
+        var result = new DriverCompetition()
+        {
+            CompetitionId = request.CompetitionId,
+            DriverId = request.DriverId,
+            Date = request.Date,
+        };
+        
+        _context.DriverCompetitions.Add(result);
+        await _context.SaveChangesAsync();
+        return result;
     }
 }

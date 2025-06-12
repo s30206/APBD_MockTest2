@@ -63,6 +63,29 @@ public class DriversController : ControllerBase
             var result = await _driverService.PostDriver(driver);
             return CreatedAtAction("GetDriver", new { id = result.Id }, result);
         }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return Problem(ex.Message);
+        }
+    }
+
+    [HttpPost]
+    [Route("competitions")]
+    public async Task<ActionResult<DriverCompetition>> AssignDriverToCompetition([FromBody] InsertDriverCompetitionDTO request)
+    {
+        try
+        {
+            await _driverService.AssignDriverToCompetition(request);
+            return NoContent();
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest(ex.Message);
+        }
         catch (Exception ex)
         {
             return Problem(ex.Message);
