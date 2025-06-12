@@ -100,4 +100,15 @@ public class DriverService : IDriverService
         await _context.SaveChangesAsync();
         return result;
     }
+
+    public async Task<List<CompetitionDTO>> GetAllCompetitions()
+    {
+        return await _context.DriverCompetitions
+            .Include(dc => dc.Competition)
+            .Select(c => new CompetitionDTO()
+            {
+                Name = c.Competition.Name,
+                Date = c.Date
+            }).ToListAsync();
+    }
 }

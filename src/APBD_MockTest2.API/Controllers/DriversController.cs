@@ -84,11 +84,26 @@ public class DriversController : ControllerBase
         }
         catch (DbUpdateException ex)
         {
-            return BadRequest("Violation of PRIMARY KEY constraint");
+            return BadRequest("Such pair of DriverId and CompetitionId already exists in the database.");
         }
         catch (KeyNotFoundException ex)
         {
             return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return Problem(ex.Message);
+        }
+    }
+
+    [HttpGet]
+    [Route("competitions")]
+    public async Task<ActionResult<IEnumerable<CompetitionDTO>>> GetCompetitions()
+    {
+        try
+        {
+            var result = await _driverService.GetAllCompetitions();
+            return result.IsNullOrEmpty() ? NoContent() : Ok(result);
         }
         catch (Exception ex)
         {

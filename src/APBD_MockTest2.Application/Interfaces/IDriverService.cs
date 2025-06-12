@@ -8,4 +8,5 @@ public interface IDriverService
     public Task<FullDriverDTO?> GetDriverById(int id);
     public Task<Driver> PostDriver(InsertDriverDTO request);
     public Task<DriverCompetition> AssignDriverToCompetition(InsertDriverCompetitionDTO request);
+    public Task<List<CompetitionDTO>> GetAllCompetitions();
 }
