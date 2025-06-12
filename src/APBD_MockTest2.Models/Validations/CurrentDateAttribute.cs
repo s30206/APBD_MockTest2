@@ -2,7 +2,7 @@
 
 namespace ClassLibrary1.Validations;
 
-
+[AttributeUsage(AttributeTargets.Property)]
 public class CurrentDateAttribute : ValidationAttribute
 {
     public override bool IsValid(object value)

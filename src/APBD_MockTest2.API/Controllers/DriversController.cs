@@ -61,7 +61,7 @@ public class DriversController : ControllerBase
         try
         {
             var result = await _driverService.PostDriver(driver);
-            return CreatedAtAction("GetDriver", new { id = result.Id }, result);
+            return Created("/api/drivers/", result.Id);
         }
         catch (KeyNotFoundException ex)
         {
@@ -81,6 +81,10 @@ public class DriversController : ControllerBase
         {
             await _driverService.AssignDriverToCompetition(request);
             return NoContent();
+        }
+        catch (DbUpdateException ex)
+        {
+            return BadRequest("Violation of PRIMARY KEY constraint");
         }
         catch (KeyNotFoundException ex)
         {
