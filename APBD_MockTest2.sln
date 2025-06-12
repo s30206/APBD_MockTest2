@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APBD_MockTest2.API", "src\APBD_MockTest2.API\APBD_MockTest2.API.csproj", "{39F4EE99-1BC3-452E-AAB2-B8E4899A150E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APBD_MockTest2.Models", "src\APBD_MockTest2.Models\APBD_MockTest2.Models.csproj", "{36ABF209-BB8F-42AF-B634-5DAF3AF55E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APBD_MockTest2.Application", "src\APBD_MockTest2.Application\APBD_MockTest2.Application.csproj", "{4DD630AE-89C9-41B2-B7AB-04ED324302B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39F4EE99-1BC3-452E-AAB2-B8E4899A150E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39F4EE99-1BC3-452E-AAB2-B8E4899A150E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39F4EE99-1BC3-452E-AAB2-B8E4899A150E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39F4EE99-1BC3-452E-AAB2-B8E4899A150E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36ABF209-BB8F-42AF-B634-5DAF3AF55E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36ABF209-BB8F-42AF-B634-5DAF3AF55E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36ABF209-BB8F-42AF-B634-5DAF3AF55E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36ABF209-BB8F-42AF-B634-5DAF3AF55E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD630AE-89C9-41B2-B7AB-04ED324302B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD630AE-89C9-41B2-B7AB-04ED324302B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD630AE-89C9-41B2-B7AB-04ED324302B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD630AE-89C9-41B2-B7AB-04ED324302B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
